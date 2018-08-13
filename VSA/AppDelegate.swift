@@ -11,14 +11,44 @@ import Firebase
 import FirebaseUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        let authUI = FUIAuth.defaultAuthUI()
+        authUI?.delegate = self
+        let providers: [FUIAuthProvider] = [
+            FUIGoogleAuth(),
+            FUIFacebookAuth(),
+            FUITwitterAuth(),
+            FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!),
+            ]
+        authUI?.providers = providers
+        let authViewController =  authUI!.authViewController()
+        self.window?.rootViewController = authViewController
+        self.window?.makeKeyAndVisible()
         return true
+    }
+    
+    func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
+        print("Successfully signed in")
+        
+        if let printError = error{
+            print("ERROR")
+            print(printError)
+            return
+        }
+        guard let user = authDataResult?.user else{
+            print("Failed to sign in user")
+            return
+        }
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let homePage = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        self.window?.rootViewController = homePage
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

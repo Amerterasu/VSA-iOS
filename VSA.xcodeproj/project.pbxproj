@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2839E915BC96A96C3A6E02DA /* Pods_VSA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E45FD483CA844AC20F6CEA /* Pods_VSA.framework */; };
 		6A04DE19211C07B1006F6225 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A04DE18211C07B1006F6225 /* GoogleService-Info.plist */; };
+		6A8A8A0D2121E5C200A361D9 /* FUICustomAuthPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8A8A0C2121E5C200A361D9 /* FUICustomAuthPickerViewController.swift */; };
 		6ADE01E3211B84BE0076344A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE01E2211B84BE0076344A /* AppDelegate.swift */; };
 		6ADE01E5211B84BE0076344A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADE01E4211B84BE0076344A /* ViewController.swift */; };
 		6ADE01E8211B84BE0076344A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ADE01E6211B84BE0076344A /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		40E45FD483CA844AC20F6CEA /* Pods_VSA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VSA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A04DE18211C07B1006F6225 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6A2651DD211FC6FB00D54077 /* VSA.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VSA.entitlements; sourceTree = "<group>"; };
+		6A8A8A0C2121E5C200A361D9 /* FUICustomAuthPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FUICustomAuthPickerViewController.swift; sourceTree = "<group>"; };
 		6ADE01DF211B84BE0076344A /* VSA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VSA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADE01E2211B84BE0076344A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6ADE01E4211B84BE0076344A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				6A2651DD211FC6FB00D54077 /* VSA.entitlements */,
 				6ADE01E2211B84BE0076344A /* AppDelegate.swift */,
 				6ADE01E4211B84BE0076344A /* ViewController.swift */,
+				6A8A8A0C2121E5C200A361D9 /* FUICustomAuthPickerViewController.swift */,
 				6ADE01E6211B84BE0076344A /* Main.storyboard */,
 				6ADE01E9211B84BE0076344A /* Assets.xcassets */,
 				6ADE01EB211B84BE0076344A /* LaunchScreen.storyboard */,
@@ -278,6 +281,7 @@
 			files = (
 				6ADE01E5211B84BE0076344A /* ViewController.swift in Sources */,
 				6ADE01E3211B84BE0076344A /* AppDelegate.swift in Sources */,
+				6A8A8A0D2121E5C200A361D9 /* FUICustomAuthPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
