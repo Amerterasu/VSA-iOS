@@ -11,7 +11,7 @@ import Firebase
 import FirebaseUI
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate{
 
     var window: UIWindow?
 
@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         let authUI = FUIAuth.defaultAuthUI()
+        
         authUI?.delegate = self
         let providers: [FUIAuthProvider] = [
             FUIGoogleAuth(),
@@ -31,6 +32,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         self.window?.rootViewController = authViewController
         self.window?.makeKeyAndVisible()
         return true
+    }
+    
+    
+    func authPickerViewController(for authUI: FUIAuth) -> FUIAuthPickerViewController {
+        return FUICustomAuthPickerViewController(authUI: authUI)
     }
     
     func authUI(_ authUI: FUIAuth, didSignInWith authDataResult: AuthDataResult?, error: Error?) {
@@ -49,6 +55,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate {
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let homePage = mainStoryboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
         self.window?.rootViewController = homePage
+    }
+    
+    func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {
+        return FUICustomAuthPickerViewController(authUI: authUI)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
