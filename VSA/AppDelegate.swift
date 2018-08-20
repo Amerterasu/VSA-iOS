@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, FUIAuthDelegate{
             FUIGoogleAuth(),
             FUIFacebookAuth(),
             FUITwitterAuth(),
-            FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!),
             ]
         authUI?.providers = providers
         let authViewController =  authUI!.authViewController()

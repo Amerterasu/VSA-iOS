@@ -21,13 +21,6 @@ class FUICustomAuthPickerViewController: FUIAuthPickerViewController{
         setBackgroundImage(backgroundImageName: "mountain")
         addBlurEffect()
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        //TODO: add swuvsa logo
-        //TODO: add constraints
-        
-    }
     
     func setBackgroundImage(backgroundImageName: String){
         //setting background image
@@ -35,6 +28,15 @@ class FUICustomAuthPickerViewController: FUIAuthPickerViewController{
         imageViewBackground.image = UIImage(named: backgroundImageName)
         imageViewBackground.contentMode = UIViewContentMode.scaleAspectFill
         view.insertSubview(imageViewBackground, at: 0)
+        
+        //unavsa logo
+        //TODO: Scale logo
+        let imageViewLogo = UIImageView(image: UIImage(named: "logo"))
+        imageViewLogo.contentMode = UIViewContentMode.scaleAspectFit
+        view.insertSubview(imageViewLogo, at: 2)
+        imageViewLogo.translatesAutoresizingMaskIntoConstraints = false
+        imageViewLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
     }
     
     func addBlurEffect(){
