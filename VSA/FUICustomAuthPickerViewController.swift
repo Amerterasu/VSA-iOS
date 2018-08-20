@@ -13,14 +13,17 @@ class FUICustomAuthPickerViewController: FUIAuthPickerViewController{
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
+        //hide the navigation bar
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
         //customize the background
         setBackgroundImage(backgroundImageName: "mountain")
         addBlurEffect()
-        
-        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         //TODO: add swuvsa logo
         //TODO: add constraints
         
